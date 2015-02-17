@@ -3,7 +3,7 @@
 
 I started my dive into software design a couple years ago by creating demo videos and animating user interfaces. Coming from a Motion Design background After Effects was my baby and I had spent so many years perfecting that craft. I have worked side by side with developers recreating the animations that I had created in After Effects. This process was slow and tedious - there was a need for designer and developer to sit next to each other and hash out the details. I wanted to improve this workflow, so I dove into the research to understand how animations work within development and what the mental model was in which I needed to adapt to. After Effects was my baby but I needed to let it go and understand the new tools at my disposal. Here are some of the key findings I found that an After Effects motion designer needs to understand if their animations will ultimately be in code.
 
-##Understand the Limitations
+##1. Understand the Limitations
 The world of development is constantly changing. As an animator one needs to be up to date on the current web standards and restrictions for animations.
 
 ###Understand the Properties at your disposal.
@@ -26,40 +26,65 @@ Properties that are performat:
 Here is a great article by Paul Lewis and Paul Irish about [High Performance Animations.](
 http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
-###Explore Whats out there:
-See what other cool things are out there
+###Push the limits:
 
-SVG Animation - SVG’s can do some pretty awesome things!
-Animate on Path, Trim Stroke, Change Stroke Weight, Color, SVG Filters
-Here is a guide CSS-Tricks created for SVG Animations!
-http://css-tricks.com/guide-svg-animations-smil/
+Explore and see what other cool things are possible with animations! One of my biggest finds was SVG Animations.
 
-I mean check this out!
-http://codepen.io/lbebber/pen/RNgBPP?editors=110
+#####Things you can do with SVG animation:
+* Animate on Path
+* Trim Stroke
+* Change Stroke Weight
+* Color
+* SVG Filters
 
+[Here is a guide CSS-Tricks created for SVG Animations!](http://css-tricks.com/guide-svg-animations-smil/)
 
-##Thinking in Percentages vs. Frames
-
-
-
-
-##Understanding Timing-Functions a.k.a. Motion Curves
+[I mean check this out!](http://codepen.io/lbebber/pen/RNgBPP?editors=110)
 
 
-% of Animation Over Time vs Property Over Time
+##2. Thinking in Percentages vs. Frames
+
+Animations are thought of as a 0 - 100% in the world of development vs. seconds/frames in a timeline. As an animator you need to be able to calculate where keyframes are located within a perecent of an animation vs the frame/timecode its on. 
+
+The best way to prepare for this calculation in After Effects is to animate with a timeline that ends with a multiple of 5 (Ex: 30 frames or 1 second) - this makes it easier to translate your animation into code.
+
+* Licecap gif of a timeline mapped out to percentages
 
 
-##Understanding the possible changing variables -
+##3. Understanding The Motion Curves of Timing-Functions
 
+This was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are predefined easing curves.[Here]() The standard ease-in, ease-out, etc. But as an advanced animator you never want to settle for a standard Easy-Ease - we like to get fancy and smooth with our easing curves. 
 
+This is where the power of the cubic-bezier comes in.
 
+% of Animation Over Time vs Property Over Time - Adobting to this mental model took some time.
+
+* this in AE = that in cubic bezier
+
+##4. Understanding the possible changing variables -
 
 
 Recently I have challenged myself to only animate in CSS. Making this transition had its own challenges but specifically changing my mental model on how animations work in the development world. 
 
+The way I prototype this is by expanding or contracting a group of keyframes. You can do this by selecting all the keyframes then hold Alt(Windows) or Option (Mac OS) and dragthe first or last keyframe to the desired time. This mimics the possible changing time variable within code.
+
+
+
+
+####My process for translating a basic animations into code:
+
+* Map out the keyframes in percentages:
+* Map out easing curves between keyframes:
+* Map out time the animation takes:
+* Done you have an coded animation!
+
+
 
 
 Resources: 
+
+ [AE Docs - Moving Keyframes](https://helpx.adobe.com/after-effects/using/editing-moving-copying-keyframes.html#move_keyframes_in_time)
+
 http://css-tricks.com/almanac/properties/t/transition-timing-function/
 
 http://www.smashingmagazine.com/2014/04/15/understanding-css-timing-functions/
