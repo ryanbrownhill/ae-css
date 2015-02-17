@@ -53,7 +53,11 @@ The best way to prepare for this calculation in After Effects is to animate with
 
 ##3. Understanding The Motion Curves of Timing-Functions
 
-This was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are predefined easing curves.[Here]() The standard ease-in, ease-out, etc. But as an advanced animator you never want to settle for a standard Easy-Ease - we like to get fancy and smooth with our easing curves. 
+This was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are predefined easing curves.[Here]() The standard ease-in, ease-out,bounce, etc. But as an advanced animator you never want to settle for a standard easy-ease - we like to get fancy and smooth with our easing curves. I mean look at this: 
+
+* insert image of beautiful curves
+
+So how do we recreate this in code?
 
 This is where the power of the cubic-bezier comes in.
 
@@ -79,6 +83,7 @@ The way I prototype this is by expanding or contracting a group of keyframes. Yo
 * Done you have an coded animation!
 
 
+Disclaimer: Most of my research was done about CSS - so when I state "code" I am mostly refering to CSS. 
 
 
 Resources: 
