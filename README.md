@@ -17,7 +17,7 @@ Basic List of Animatable Properties:
 [Examples of Each Property Animated](http://leaverou.github.io/animatable/)
 
 ###Consider Performance.
-In After Effects you have to consider the render time of your animations. You have to do the same for code - you have to think about the performance of an animations.
+In After Effects you have to consider the render time of your animations. The same must be done for code; the performance of an animation must be considered.
 
 Properties that are performat:
 
@@ -61,7 +61,7 @@ First define the keyframes for the animation:
 	  }
 	}
 	
-Then apply those keyframes to the object(s). Here additional animation properties can be defined for example: duration, iteration, delay, etc.
+Then apply those keyframes to the object(s). Here, additional animation properties can be defined. For example: duration, iteration, delay, etc. 
 
 	.object-class {
 	 animation-name: animation-rocks;
@@ -90,7 +90,7 @@ Understanding Timing-Functions was the tickiest part for me to wrap my mind arou
 
 There are two different ways to apply eases in code:
 
-In CSS there is the "global" ease that can be defined in the object class, this applies the same ease to every keyframe. For example if you have a bounce the animation will bounce at every keyframe.
+In CSS there is the "global" ease that can be defined in the object class, this applies the same ease to every keyframe. For example, if you have a bounce, the animation will bounce at every keyframe.
 
 	.object-class {
 	 animation-name: animation-rocks;
@@ -131,7 +131,7 @@ After Effects is Property over Time. The CSS `cubic-bezier()` is Percent of Anim
 ![After-Effects-XY](images/ae-css-xy.png)
 
 
-Adapting to this mental model took some time. Below is a visual examples of how After Effects curves translate to code.
+Adapting to this mental model took some time. See visual examples below of how After Effects curves translate to code.
 
 After Effects
 ![AE-to-Cubic](images/ae-cubic-2.png)
@@ -163,7 +163,7 @@ Below shows how the timeline above would look in CSS. Curve A & B are custom `cu
 
 When designing animation for interaction, it's important to consider that variables do change based on user input. The most common variable that requires flexibility is the `animation-duration()` - this is the amount of time that the animation takes to complete.
 
-The way I prototype this in After Effects is by expanding or contracting a group of keyframes. You can do this by selecting all the keyframes then hold Alt(Windows) or Option (Mac OS) and drag the first or last keyframe to the desired time. This mimics the possible changing time variable within code.
+The way I prototype this in After Effects is by expanding or contracting a group of keyframes. This can be done by selecting all the keyframes then holding Alt(Windows) or Option (Mac OS) and dragging the first or last keyframe to the desired time.  This mimics the possible changing time variable within code.
 
 
 ####My process for translating basic animations into code:
