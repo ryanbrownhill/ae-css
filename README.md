@@ -1,7 +1,9 @@
 #AE to CSS
 ##Making the transition from animating in After Effects to CSS.
 
-I started my dive into software design a couple years ago by creating demo videos and animating user interfaces. Coming from a Motion Design background, After Effects was my baby, and I had spent many years perfecting that craft. I have worked side by side with developers recreating the animations that I had created in After Effects. This process was slow and tedious - there was a need for the designer and developer to sit next to each other and hash out the details. I wanted to improve this workflow, so I dove into the research to understand how animations work within development and what the mental model was in which I needed to adapt to. After Effects was my baby but I needed to let it go and understand the new tools at my disposal. Here are some of the key findings I found that an After Effects motion designer needs to understand if their animations will ultimately be in code.
+I started my dive into software design a couple years ago by creating demo videos and animating user interfaces. Coming from a Motion Design background, After Effects was my baby, and I had spent many years perfecting that craft. I have worked side by side with developers recreating the animations that I had created in After Effects. This process was slow and tedious - there was a need for the designer and developer to sit next to each other and hash out the details. 
+
+I wanted to improve this workflow, so I dove into the research to understand how animations work within development and what the mental model was in which I needed to adapt to. After Effects was my baby but I needed to let it go and understand the new tools at my disposal. Here are some of the key findings I found that an After Effects motion designer needs to understand if their animations will ultimately be in code.
 
 
 ##1. Understand the Limitations
@@ -84,7 +86,39 @@ The best way to prepare for this calculation in After Effects is to animate with
 
 ##4. Understanding The Motion Curves of Timing-Functions
 
-Understanding Timing-Functions was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. As an advanced animator, we never want to settle for a standard easy-ease - we like to get fancy and smooth with our easing curves. An average graph editor in After Effects looks like this:
+Understanding Timing-Functions was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. 
+
+There are two different ways to apply eases in code:
+
+In CSS there is the "global" ease that can be defined in the object class, this applys the same ease to every keyframe. For example if you have a bounce the animation will bounce at every keyframe.
+
+	.object-class {
+	 animation-name: animation-rocks;
+	 animation-timing-function: easeOutBounce;
+	}
+
+The other way to define eases is within each keyframe.
+
+	@keyframes ae-to-css {
+	  0% {
+	    animation-timing-function:ease-out;
+	  }
+	  23% {
+	    animation-timing-function:ease-in;
+	  }
+	  50% {
+	    animation-timing-function:cubic-bezier(.5,0,.5,1.5);
+	  }
+	  76% {
+	    animation-timing-function:cubic-bezier(0,0,0,1);
+	  }
+	  100% {
+	  }
+	}
+
+
+
+ As an advanced animator, we never want to settle for a standard easy-ease - we like to get fancy and smooth with our easing curves. An average graph editor in After Effects looks like this:
 
 ![After-Effects-Curves](images/beautiful-ae-curves.png)
 
@@ -99,7 +133,10 @@ After Effects is Property over Time. The CSS `cubic-bezier()` is Percent of Anim
 
 Adabting to this mental model took some time. Below is a visual examples of how After Effects curves translate to code.
 
+After Effects
 ![AE-to-Cubic](images/ae-cubic-2.png)
+CSS
+![CSS-Bezier](images/css-bezier.png)
 
 Below shows how the timeline above would look in CSS. Curve A & B are custom `cubic-bezier()` created with tools like [Ceasar](http://matthewlein.com/ceaser/) or [Cubic-Bezier.com](http://cubic-bezier.com/). Its important to take note that the easing curve is defined in the percentage value before you want the ease to happen. 
 
@@ -120,8 +157,7 @@ Below shows how the timeline above would look in CSS. Curve A & B are custom `cu
 	  100% {
 	  }
 	}
-
-
+	
 
 ##5. Understanding the possible changing variables -
 
