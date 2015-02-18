@@ -130,11 +130,12 @@ When designing animation for interaction, it's important to consider that variab
 The way I prototype this in After Effects is by expanding or contracting a group of keyframes. You can do this by selecting all the keyframes then hold Alt(Windows) or Option (Mac OS) and drag the first or last keyframe to the desired time. This mimics the possible changing time variable within code.
 
 
-####My process for translating a basic animations into code:
+####My process for translating basic animations into code:
 
-* Map out the keyframes in percentages:
-* Map out easing curves between keyframes:
-* Map out time the animation takes:
+* Map out the keyframes in percentages.
+* Insert property values into each percentage.
+* Map out the easing curves between keyframes.
+* Document the duration the animation takes.
 * Done you have an coded animation!
 
 
