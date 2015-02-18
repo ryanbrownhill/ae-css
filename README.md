@@ -77,7 +77,7 @@ For more information about the CSS Keyframe animation structure check out [W3Sch
 
 ##3. Thinking in Percentages vs. Frames
 
-Animations are thought of as a 0% - 100% in the world of development vs. seconds/frames in After Effects. As an animator you need to be able to calculate where keyframes are located within a perecentage vs. the frame/timecode its on. 
+Animations are thought of as a 0% - 100% in the world of development vs. seconds/frames in After Effects. As an animator you need to be able to calculate where keyframes are located within a percentage vs. the frame/timecode its on. 
 
 The best way to prepare for this calculation in After Effects is to animate with a timeline that ends with a multiple of 5 (Ex: 30 frames or 1 second) - this makes it easier to translate your animation into code. It is also helpful to align multiple animation properties to the same percentage in the timeline. Below is an example of percentages mapped out to an After Effects timeline.
 
@@ -86,11 +86,11 @@ The best way to prepare for this calculation in After Effects is to animate with
 
 ##4. Understanding The Motion Curves of Timing-Functions
 
-Understanding Timing-Functions was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. 
+Understanding Timing-Functions was the tickiest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. 
 
 There are two different ways to apply eases in code:
 
-In CSS there is the "global" ease that can be defined in the object class, this applys the same ease to every keyframe. For example if you have a bounce the animation will bounce at every keyframe.
+In CSS there is the "global" ease that can be defined in the object class, this applies the same ease to every keyframe. For example if you have a bounce the animation will bounce at every keyframe.
 
 	.object-class {
 	 animation-name: animation-rocks;
@@ -131,7 +131,7 @@ After Effects is Property over Time. The CSS `cubic-bezier()` is Percent of Anim
 ![After-Effects-XY](images/ae-css-xy.png)
 
 
-Adabting to this mental model took some time. Below is a visual examples of how After Effects curves translate to code.
+Adapting to this mental model took some time. Below is a visual examples of how After Effects curves translate to code.
 
 After Effects
 ![AE-to-Cubic](images/ae-cubic-2.png)
