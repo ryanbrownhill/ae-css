@@ -77,14 +77,14 @@ For more information about the CSS Keyframe animation structure check out [W3Sch
 
 Animations are thought of as a 0% - 100% in the world of development vs. seconds/frames in After Effects. As an animator you need to be able to calculate where keyframes are located within a perecentage vs. the frame/timecode its on. 
 
-The best way to prepare for this calculation in After Effects is to animate with a timeline that ends with a multiple of 5 (Ex: 30 frames or 1 second) - this makes it easier to translate your animation into code. It is also helpful to align multiple animation properties to the same percentage in the timeline.
+The best way to prepare for this calculation in After Effects is to animate with a timeline that ends with a multiple of 5 (Ex: 30 frames or 1 second) - this makes it easier to translate your animation into code. It is also helpful to align multiple animation properties to the same percentage in the timeline. Below is an example of percentages mapped out to an After Effects timeline.
 
 ![Animation-Percentages](images/percentage-timeline.png)
 
 
 ##4. Understanding The Motion Curves of Timing-Functions
 
-Understanding Timing-Functions was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are predefined easing curves.[Here](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. As an advanced animator, we never want to settle for a standard easy-ease - we like to get fancy and smooth with our easing curves. An average graph editor in After Effects looks like this:
+Understanding Timing-Functions was the trickest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. As an advanced animator, we never want to settle for a standard easy-ease - we like to get fancy and smooth with our easing curves. An average graph editor in After Effects looks like this:
 
 ![After-Effects-Curves](images/beautiful-ae-curves.png)
 
@@ -92,20 +92,17 @@ So how do we recreate these beautiful motion curves in code? This is where the p
 
 The `cubic-bezier()` function can be manipulated however you want - just like the After Effects graph editor. The only difference is the X&Y axies. 
 
-* After Effects is Property over Time. 
-![After-Effects-XY](images/ae-xy.png)
+After Effects is Property over Time. The CSS `cubic-bezier()` is Percent of Animation over Time.
 
-
-* CSS `cubic-bezier()` is Percent of Animation over Time.
-
-![CSS-XY](images/css-xy.png)
+![After-Effects-XY](images/ae-css-xy.png)
 
 
 Adabting to this mental model took some time. Below is a visual examples of how After Effects curves translate to code.
 
 ![AE-to-Cubic](images/ae-cubic-2.png)
 
-How this looks in CSS:
+Below shows how the timeline above would look in CSS. Curve A & B are custom `cubic-bezier()` created with tools like [Ceasar](http://matthewlein.com/ceaser/) or [Cubic-Bezier.com](http://cubic-bezier.com/).
+
 
 	@keyframes ae-to-css {
 	  0% {
@@ -124,7 +121,7 @@ How this looks in CSS:
 	  }
 	}
 
-Curve A & B are custom `cubic-bezier()` created with tools like [Ceasar](http://matthewlein.com/ceaser/) or [Cubic-Bezier.com](http://cubic-bezier.com/).
+
 
 ##5. Understanding the possible changing variables -
 
