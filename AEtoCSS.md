@@ -101,7 +101,7 @@ Adabting to this mental model took some time. Below is a visual examples of how 
 
 ![AE-to-Cubic](images/ae-cubic-2.png)
 
-Below shows how the timeline above would look in CSS. Curve A & B are custom `cubic-bezier()` created with tools like [Ceasar](http://matthewlein.com/ceaser/) or [Cubic-Bezier.com](http://cubic-bezier.com/).
+Below shows how the timeline above would look in CSS. Curve A & B are custom `cubic-bezier()` created with tools like [Ceasar](http://matthewlein.com/ceaser/) or [Cubic-Bezier.com](http://cubic-bezier.com/). Its important to take note that the easing curve is defined in the percentage value before you want the ease to happen. 
 
 
 	@keyframes ae-to-css {
