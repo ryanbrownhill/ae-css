@@ -1,22 +1,22 @@
-#AE to CSS
-##Making the transition from animating in After Effects to CSS.
+# AE to CSS  
+## Making the transition from animating in After Effects to CSS.
 
 I started my dive into software design a couple years ago by creating demo videos and animating user interfaces. Coming from a Motion Design background, After Effects was my baby, and I had spent many years perfecting that craft. I have worked side by side with developers recreating the animations that I had created in After Effects. This process was slow and tedious - there was a need for the designer and developer to sit next to each other and hash out the details. 
 
 I wanted to improve this workflow, so I dove into the research to understand how animations work within development and what the mental model was in which I needed to adapt to. After Effects was my baby but I needed to let it go and understand the new tools at my disposal. Here are some of the key findings I found that an After Effects motion designer needs to understand if their animations will ultimately be in code.
 
 
-##1. Understand the Limitations
+## 1. Understand the Limitations
 The world of development is constantly changing. As an animator, one needs to be up to date on the current web standards and restrictions for animations.
 
-###Understand the Properties at your disposal.
+### Understand the Properties at your disposal.
 Basic List of Animatable Properties: 
 
 ![Animation-Properties](images/animation-properties.png)
 
 [Examples of Each Property Animated](http://leaverou.github.io/animatable/)
 
-###Consider Performance.
+### Consider Performance.
 In After Effects you have to consider the render time of your animations. The same must be done for code; the performance of an animation must be considered.
 
 Properties that are performat:
@@ -29,11 +29,11 @@ Properties that are performat:
 Here is a great article by Paul Lewis and Paul Irish about [High Performance Animations.](
 http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
-###Push the limits:
+### Push the limits:
 
 Explore and see what other cool things are possible with animations! One of my biggest finds was SVG Animations.
 
-#####Things you can do with SVG animation:
+##### Things you can do with SVG animation:
 * Animate on Path
 * Trim Stroke
 * Change Stroke Weight
@@ -45,7 +45,7 @@ Here is a guide CSS-Tricks created for [SVG Animations!](http://css-tricks.com/g
 [I mean check this out!](http://codepen.io/lbebber/pen/RNgBPP?editors=110)
 
 
-##2. Understand CSS Keyframe Animation Structure
+## 2. Understand CSS Keyframe Animation Structure
 
 First define the keyframes for the animation:
 
@@ -75,7 +75,7 @@ Then apply those keyframes to the object(s). Here, additional animation properti
 
 For more information about the CSS Keyframe animation structure check out [W3School's CSS3 Animations](http://www.w3schools.com/css/css3_animations.asp)
 
-##3. Thinking in Percentages vs. Frames
+## 3. Thinking in Percentages vs. Frames
 
 Animations are thought of as a 0% - 100% in the world of development vs. seconds/frames in After Effects. As an animator you need to be able to calculate where keyframes are located within a percentage vs. the frame/timecode its on. 
 
@@ -84,7 +84,7 @@ The best way to prepare for this calculation in After Effects is to animate with
 ![Animation-Percentages](images/percentage-timeline.png)
 
 
-##4. Understanding The Motion Curves of Timing-Functions
+## 4. Understanding The Motion Curves of Timing-Functions
 
 Understanding Timing-Functions was the tickiest part for me to wrap my mind around. Within CSS & many other programing languages there are [predefined easing curves.](http://easings.net/) The standard `easeIn`, `easeOut`, `easeOutBounce`, etc. 
 
@@ -159,14 +159,14 @@ Below shows how the timeline above would look in CSS. Curve A & B are custom `cu
 	}
 	
 
-##5. Understanding the possible changing variables -
+## 5. Understanding the possible changing variables -
 
 When designing animation for interaction, it's important to consider that variables do change based on user input. The most common variable that requires flexibility is the `animation-duration()` - this is the amount of time that the animation takes to complete.
 
 The way I prototype this in After Effects is by expanding or contracting a group of keyframes. This can be done by selecting all the keyframes then holding Alt(Windows) or Option (Mac OS) and dragging the first or last keyframe to the desired time.  This mimics the possible changing time variable within code.
 
 
-####My process for translating basic animations into code:
+#### My process for translating basic animations into code:
 
 1. Map out the keyframes in percentages.
 2. Insert property values into each percentage.
